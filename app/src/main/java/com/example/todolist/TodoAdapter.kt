@@ -17,7 +17,7 @@ class TodoAdapter (
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         return TodoViewHolder(
-                // inflate converts this code into the xml needed to view it
+                // inflate takes the xml from the frontend and lets us work with it in Kotlin
                 LayoutInflater.from(parent.context).inflate(
                         R.layout.item_todo,
                         parent,
