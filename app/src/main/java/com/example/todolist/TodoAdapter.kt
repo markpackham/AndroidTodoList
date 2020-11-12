@@ -26,6 +26,20 @@ class TodoAdapter (
         )
     }
 
+    fun addTodo (todo: Todo){
+        todos.add(todo)
+        // put at the end of the list
+        notifyItemInserted(todos.size - 1)
+    }
+
+    fun deleteDoneTodos(){
+        todos.removeAll{ todo ->
+            todo.isChecked
+        }
+        // update our hole list after getting rid of the done todos
+        notifyDataSetChanged()
+    }
+
     // Toggle state of striked through todos
     private fun toggleStrikeThrough(tvTodoTitle: TextView, isChecked: Boolean){
         if(isChecked){
